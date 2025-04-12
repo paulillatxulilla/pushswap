@@ -10,3 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+int	main (int argc, char *argv)
+{
+	char	**result;
+	if (argc < 2)
+	{
+		ft_printf ("Error\n");
+		return (0);
+	}
+	result = ft_split(argv, " ");
+	
+}
