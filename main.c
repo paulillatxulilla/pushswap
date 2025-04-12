@@ -20,4 +20,5 @@ int	main (int argc, char *argv)
 	}
 	result = ft_split(argv, " ");
 	
+
 }
