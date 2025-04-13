@@ -12,6 +12,7 @@
 
 int	main (int argc, char *argv)
 {
+	t_list	a;
 	char	**result;
 	if (argc < 2)
 	{

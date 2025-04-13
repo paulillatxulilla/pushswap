@@ -13,7 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 # include <stddef.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -21,5 +21,7 @@
 # include <unistd.h>
 # include <stdbool.h>
 
+int	ft_parse_digit(char **result);
+int	ft_parse_repeated(char **result);
 
 #endif
