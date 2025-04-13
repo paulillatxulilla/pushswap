@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/13 19:06:16 by paula            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:00:21 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,40 @@ t_list	**ft_atot(char	**result, t_list **a)
 		}
 		else
 			ft_lstadd_back(a, ft_lstnew(result[i]));
-	i++;
+		i++;
 	}
 	return (a);
 }
 
 int	ft_parse_repeat(t_list **a)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 1;
+	void	*aux;
+	int		i;
 	
-	while (a[i])
+	i = 0;
+	while (a)
 	{
-		
+		aux = (*a)->content;
+		while ((*a)->next)
+			{
+				a = (*a)->next;
+				if ((*a)->content == aux)
+					return (1);
+			}
+		a = (*a)->next;
 	}
+	return (0);
+}
+
+t_list	*ft_lstlastn(t_list *lst, size_t n)
+{
+	int	i;
+	if (!lst)
+		return (NULL);
+	while (lst->next && i <= n)
+	{
+		lst = lst->next;
+		i++;
+	}	
+	return (lst);
 }

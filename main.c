@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 int	main (int argc, char *argv)
 {
 	t_list	a;
@@ -20,6 +22,6 @@ int	main (int argc, char *argv)
 		return (0);
 	}
 	result = ft_split(argv, " ");
-	ft_parse_digit (result)
+	ft_parse_digit (result);
 
 }
