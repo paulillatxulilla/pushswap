@@ -19,6 +19,6 @@ int	main (int argc, char *argv)
 		return (0);
 	}
 	result = ft_split(argv, " ");
-	
+	ft_parse_digit (result)
 
 }
