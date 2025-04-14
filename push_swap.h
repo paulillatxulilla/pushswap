@@ -21,7 +21,8 @@
 # include <unistd.h>
 # include <stdbool.h>
 
-int	ft_parse_digit(char **result);
-int	ft_parse_repeated(char **result);
+int	ft_check_digit(char **result);
+int	ft_check_repeat(t_list **a);
+t_list	**ft_atot(char	**result, t_list **a);
 
 #endif

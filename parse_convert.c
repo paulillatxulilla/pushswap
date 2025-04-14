@@ -6,13 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/13 20:00:21 by paula            ###   ########.fr       */
+/*   Updated: 2025/04/14 13:17:07 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_parse_digit(char **result)
+int	ft_check_digit(char **result)
 {
 	int i;
     int	len;
@@ -48,35 +48,21 @@ t_list	**ft_atot(char	**result, t_list **a)
 	return (a);
 }
 
-int	ft_parse_repeat(t_list **a)
+int	ft_check_repeat(t_list **a)
 {
-	void	*aux;
-	int		i;
+	t_list	**aux;
 	
-	i = 0;
 	while (a)
 	{
-		aux = (*a)->content;
-		while ((*a)->next)
+		aux = a;
+		while (a = (*a)->next)
 			{
 				a = (*a)->next;
-				if ((*a)->content == aux)
+				if ((*a)->content == (*aux)->content)
 					return (1);
 			}
+		a = aux;
 		a = (*a)->next;
 	}
 	return (0);
-}
-
-t_list	*ft_lstlastn(t_list *lst, size_t n)
-{
-	int	i;
-	if (!lst)
-		return (NULL);
-	while (lst->next && i <= n)
-	{
-		lst = lst->next;
-		i++;
-	}	
-	return (lst);
 }
