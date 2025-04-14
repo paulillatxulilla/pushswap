@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/14 15:52:21 by paula            ###   ########.fr       */
+/*   Updated: 2025/04/14 15:53:06 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	ft_check_repeat(t_list **a)
 		aux2 = (*aux2) ->next;
 		while (aux2)
 			{
-				if ((int *)(*aux)->content == (int *)(*aux2)->content)//content es solo un void *. Y no puedes hacer operaciones directamente sobre un void *
+				if ((int )(*aux)->content == (int )(*aux2)->content)//content es solo un void *. Y no puedes hacer operaciones directamente sobre un void *
 					return (0);
 				aux2 = (*aux2)->next;
 			}
