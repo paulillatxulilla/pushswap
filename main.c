@@ -15,6 +15,7 @@
 int	main (int argc, char *argv)
 {
 	t_list	**a;
+	t_list	**b;
 	char	**result;
 	if (argc < 2)
 	{
@@ -22,8 +23,6 @@ int	main (int argc, char *argv)
 		return (0);
 	}
 	result = ft_split(argv, " ");
-	ft_check_digit(result);
-	ft_atot(result, a);
-	ft_check_repeat(a);//meter a funcion push_swap
-
+	a = ft_parse_convert(result, a);
+	return (0);
 }
