@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/14 15:53:06 by paula            ###   ########.fr       */
+/*   Updated: 2025/04/15 16:24:38 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_parse_convert(char **result, t_list **a)
 		return (NULL);
 	}
 }
+
 int	ft_check_digit(char **result)
 {
 	int i;
