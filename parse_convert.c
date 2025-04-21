@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_convert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/15 16:24:38 by paula            ###   ########.fr       */
+/*   Updated: 2025/04/21 15:47:20 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ t_list	**ft_atot(char **result, t_list **a)
 	{
 		if (i == 0)
 		{
-			(*a)->content = result[i];
+			(*a)->content = ft_atoi(result[i]);
 		}
 		else
-			ft_lstadd_back(a, ft_lstnew(result[i]));
+			ft_lstadd_back(a, ft_lstnew(ft_atoi(result[i])));
 		i++;
 	}
 	return (a);
@@ -77,11 +77,10 @@ int	ft_check_repeat(t_list **a)
 	aux = a;
 	while (aux)
 	{
-		aux2 = aux;
-		aux2 = (*aux2) ->next;
+		aux2 = (*aux)->next;
 		while (aux2)
 			{
-				if ((int )(*aux)->content == (int )(*aux2)->content)//content es solo un void *. Y no puedes hacer operaciones directamente sobre un void *
+				if ((*aux)->content == (*aux2)->content)//content es solo un void *. Y no puedes hacer operaciones directamente sobre un void *
 					return (0);
 				aux2 = (*aux2)->next;
 			}
