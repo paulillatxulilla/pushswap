@@ -21,9 +21,21 @@
 # include <unistd.h>
 # include <stdbool.h>
 
-t_list	*ft_parse_convert(char **result, t_list *a);
-int	ft_check_digit(char **result);
-int	ft_check_repeat(t_list *a);
-t_list	*ft_atot(char	**result, t_list *a);
+t_list	**ft_parse_convert(char **result, t_list **a);
+int		ft_check_digit(char **result);
+int		ft_check_repeat(t_list **a);
+t_list	**ft_atot(char **result, t_list **a);
+void	ft_sa(t_list **a);
+void	ft_sb(t_list **b);
+void	ft_ss(t_list	**a, t_list	**b);
+void	ft_pa(t_list	**a, t_list	**b);
+void	ft_pb(t_list	**a, t_list	**b);
+void	ft_ra(t_list	**a);
+void	ft_rb(t_list	**b);
+void	ft_rr(t_list	**a, t_list	**b);
+void	ft_rra(t_list	**a);
+void	ft_rrb(t_list	**b);
+void	ft_rrr(t_list	**a, t_list	**b);
+t_list	*ft_lstmove(t_list *lst, int n);
 
 #endif

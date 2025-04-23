@@ -6,13 +6,13 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/21 15:47:20 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:11:35 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_parse_convert(char **result, t_list **a)
+t_list	**ft_parse_convert(char **result, t_list **a)
 {
 	if (ft_check_digit(result))
 	{
@@ -29,8 +29,8 @@ t_list	*ft_parse_convert(char **result, t_list **a)
 
 int	ft_check_digit(char **result)
 {
-	int i;
-    int	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (result[i])
@@ -47,7 +47,7 @@ int	ft_check_digit(char **result)
 			j++;
 		}
 		i++;
-    }
+	}
 	return (1);
 }
 
@@ -73,17 +73,17 @@ int	ft_check_repeat(t_list **a)
 {
 	t_list	**aux;
 	t_list	**aux2;
-	
+
 	aux = a;
 	while (aux)
 	{
 		aux2 = (*aux)->next;
 		while (aux2)
-			{
-				if ((*aux)->content == (*aux2)->content)//content es solo un void *. Y no puedes hacer operaciones directamente sobre un void *
-					return (0);
-				aux2 = (*aux2)->next;
-			}
+		{
+			if ((*aux)->content == (*aux2)->content)
+				return (0);
+			aux2 = (*aux2)->next;
+		}
 		aux = (*aux)->next;
 	}
 	return (1);

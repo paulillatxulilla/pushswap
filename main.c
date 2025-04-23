@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/* 
 int	main (int argc, char *argv)
 {
 	t_list	**a;
@@ -25,4 +25,4 @@ int	main (int argc, char *argv)
 	result = ft_split(argv, " ");
 	a = ft_parse_convert(result, a);
 	return (0);
-}
+} */

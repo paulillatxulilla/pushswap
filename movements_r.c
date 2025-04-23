@@ -11,3 +11,35 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_ra(t_list	**a)
+{
+	t_list	*aux;
+	t_list	*last;
+
+	aux = *a;
+	last = ft_lstlast((*a));
+	if (!a)
+		return ;
+	last->next = aux->next;
+	aux->next = NULL;
+}
+
+void	ft_rb(t_list	**b)
+{
+	t_list	*aux;
+	t_list	*last;
+
+	aux = *b;
+	last = ft_lstlast((*b));
+	if (!b)
+		return ;
+	last->next = aux->next;
+	aux->next = NULL;
+}
+
+void	ft_rr(t_list	**a, t_list	**b)
+{
+	ft_rotate_a(a);
+	ft_rotate_b(b);
+}

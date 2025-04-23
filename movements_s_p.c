@@ -12,42 +12,42 @@
 
 #include "push_swap.h"
 
-void	ft_swap_a(t_list **a)//sa
+void	ft_sa(t_list **a)//sa
 {
 	int		len;
 	t_list	*aux;
 
-	aux = a;
+	aux = (*a);
 	len = ft_lstsize((*a));
 	if (len < 2)
 		return ;
-	a = a->next;
-	aux->next = a->next;
-	a->next = aux;
+	(*a) = (*a)->next;
+	aux->next = (*a)->next;
+	(*a)->next = aux;
 }
 
-void	ft_swap_b(t_list **b)//sb
+void	ft_sb(t_list **b)//sb
 {
 	int		len;
 	t_list	*aux;
 
-	aux = b;
+	aux = (*b);
 	len = ft_lstsize((*b));
 	if (len < 2)
 		return ;
-	b = b->next;
-	aux->next = b->next;
-	b->next = aux;
+	(*b) = (*b)->next;
+	aux->next = (*b)->next;
+	(*b)->next = aux;
 }
 
-void	ft_swap_ss(t_list	**a, t_list	**b)//ss
+void	ft_ss(t_list	**a, t_list	**b)//ss
 {
 	int	len1;
 	int	len2;
 
 	len1 = ft_lstsize((*a));
 	len2 = ft_lstsize((*b));
-	if(len1 >= 2 && len2 >= 2)
+	if (len1 >= 2 && len2 >= 2)
 	{
 		ft_swap_a(a);
 		ft_swap_b(b);
@@ -56,13 +56,27 @@ void	ft_swap_ss(t_list	**a, t_list	**b)//ss
 		return ;
 }
 
-void	ft_push_a(t_list	**a, t_list	**b)
+void	ft_pa(t_list	**a, t_list	**b)//pa
 {
 	t_list	*aux;
-	aux = b;
 
+	aux = (*b);
 	if (!b)
 		return ;
-	ft_lstadd_front
+	aux->next = NULL;
+	ft_lstadd_front(a, aux);
+	aux = aux->next;
+	(*b) = (*b)->next;
 }
 
+void	ft_pb(t_list	**a, t_list	**b)//pb
+{
+	t_list	*aux;
+
+	aux = (*a);
+	if (!a)
+		return ;
+	aux->next = NULL;
+	ft_lstadd_front(b, aux);
+	(*a) = (*a)->next;
+}

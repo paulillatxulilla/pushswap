@@ -3,16 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:26:11 by paula             #+#    #+#             */
-/*   Updated: 2025/04/14 13:36:09 by paula            ###   ########.fr       */
+/*   Updated: 2025/04/23 18:12:48 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/* 
 char    *push_swap(t_list **a, t_list **b)
 {
     
+} */
+
+t_list	*ft_lstmove(t_list *lst, int n)
+{
+	int	i;
+
+	i = 0;
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL && i < n)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (lst);
 }
