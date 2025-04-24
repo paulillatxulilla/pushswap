@@ -22,7 +22,7 @@ void	ft_rra(t_list	**a)
 	aux = (*a);
 	last = ft_lstlast(a);
 	size = (ft_lstsize(*a));
-	aux2 = ft_lstmove(aux, size - 1);
+	aux2 = ft_lstmoven(aux, size - 1);
 	if (!a)
 		return ;
 	last->next = aux->next;
@@ -39,7 +39,7 @@ void	ft_rrb(t_list	**b)
 	aux = (*b);
 	last = ft_lstlast(b);
 	size = (ft_lstsize(*b));
-	aux2 = ft_lstmove(aux, size - 1);
+	aux2 = ft_lstmoven(aux, size - 1);
 	if (!b)
 		return ;
 	last->next = aux->next;

@@ -17,6 +17,8 @@ int	main (int argc, char *argv)
 	t_list	**a;
 	t_list	**b;
 	char	**result;
+
+	
 	if (argc < 2)
 	{
 		ft_printf ("Error\n");

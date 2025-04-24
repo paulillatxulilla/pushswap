@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/23 18:11:35 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:58:44 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	**ft_parse_convert(char **result, t_list **a)
 	if (ft_check_digit(result))
 	{
 		ft_atot(result, a);
-		if (ft_check_repeat(a))
+		if (ft_check_repeat(a) && ft_check_long(a))
 			return (a);
 	}
 	else
@@ -51,22 +51,30 @@ int	ft_check_digit(char **result)
 	return (1);
 }
 
-t_list	**ft_atot(char **result, t_list **a)
+t_list	**ft_atot(char **result, t_list *a)
 {
 	int	i;
 
 	i = 0;
 	while (result[i])
 	{
-		if (i == 0)
-		{
-			(*a)->content = ft_atoi(result[i]);
-		}
-		else
-			ft_lstadd_back(a, ft_lstnew(ft_atoi(result[i])));
+		ft_lstadd_back(&a, ft_lstnew(ft_atoi(result[i])));
 		i++;
 	}
 	return (a);
+}
+int	ft_check_long(t_list **a)
+{
+	t_list	*aux;
+	
+	aux = (*a);
+	while (aux)
+	{
+		if (aux->content == -2147483648 || aux->content == 2147483647)
+			return (0);
+		aux = aux->next;
+	}
+	return (1);
 }
 
 int	ft_check_repeat(t_list **a)
