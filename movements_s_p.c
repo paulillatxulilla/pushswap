@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_sa(t_list **a)//sa
+void	ft_sa(t_list **a)
 {
 	int		len;
 	t_list	*aux;
@@ -26,7 +26,7 @@ void	ft_sa(t_list **a)//sa
 	(*a)->next = aux;
 }
 
-void	ft_sb(t_list **b)//sb
+void	ft_sb(t_list **b)
 {
 	int		len;
 	t_list	*aux;
@@ -40,7 +40,7 @@ void	ft_sb(t_list **b)//sb
 	(*b)->next = aux;
 }
 
-void	ft_ss(t_list	**a, t_list	**b)//ss
+void	ft_ss(t_list	**a, t_list	**b)
 {
 	int	len1;
 	int	len2;
@@ -56,7 +56,7 @@ void	ft_ss(t_list	**a, t_list	**b)//ss
 		return ;
 }
 
-void	ft_pa(t_list	**a, t_list	**b)//pa
+void	ft_pa(t_list	**a, t_list	**b)
 {
 	t_list	*aux;
 
@@ -69,7 +69,7 @@ void	ft_pa(t_list	**a, t_list	**b)//pa
 	(*b) = (*b)->next;
 }
 
-void	ft_pb(t_list	**a, t_list	**b)//pb
+void	ft_pb(t_list	**a, t_list	**b)
 {
 	t_list	*aux;
 

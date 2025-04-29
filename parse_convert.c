@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/24 17:58:44 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/04/28 12:31:41 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_check_digit(char **result)
 	return (1);
 }
 
-t_list	**ft_atot(char **result, t_list *a)
+t_list	**ft_atot(char **result, t_list **a)
 {
 	int	i;
 

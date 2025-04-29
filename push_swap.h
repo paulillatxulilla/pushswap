@@ -38,6 +38,8 @@ void	ft_rra(t_list	**a);
 void	ft_rrb(t_list	**b);
 void	ft_rrr(t_list	**a, t_list	**b);
 t_list	*ft_lstmoven(t_list *lst, int n);
-
+int	    ft_sorted(t_list	**a);
+void	**ft_sort_two(t_list	**a);
+void	**ft_sort_three(t_list	**a);
 
 #endif

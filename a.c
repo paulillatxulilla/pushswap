@@ -1,27 +1,38 @@
 /* #include "push_swap.h"
+#include <stdio.h>
 
-
-void loop(t_list **stack)
+void change_dos(int **num)
 {
-    // t_list *a = *stack;
-    // while (*stack)
-    // {
-    //     (stack) = &(*stack)->next;
-    // }
-    stack->next = NULL;
+    int b = 12;
+
+    *num = &b;
+    printf("b ptr: %p\n", &b);
+
+}
+
+void change_one(int *num)
+{
+    *num = 12;
+    num = NULL;
+  printf("NULL ptr: %p\n", num);
 
 }
 int main (void)
 {
-    t_list *a;
-    t_list *b;
-    int c = 2;
-    int d = 3;
-    a = ft_lstnew((int)c);
-    b = ft_lstnew((int)d);
-    ft_lstadd_back(&a, b);
-    printf("ANATES %d\n", a->content); 
-    loop(a);
-    printf("num %d\n", a->next->content); 
+  int *n;
+  int num = 10;
+int **n3;
+
+  n = &num;
+  n3 = &n;
+  printf("ANTES ptr: %p\n", n);
+
+//   change_one(n);
+//   printf("ONE: %d\n", *n);
+//   printf("DESPUES ptr: %p\n", n);
+  change_dos(&n);
+  printf("DOS: %d\n", *n);
+  printf("DOS ptr: %p\n", n);
+
     
 } */

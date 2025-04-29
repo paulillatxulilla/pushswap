@@ -6,65 +6,61 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/04/24 17:51:10 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/04/29 18:25:50 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sorted(t_list	*a)
+int	ft_sorted(t_list	**a)
 {
-	t_list	*aux;
-	t_list	*auxn;
-	t_list	*ref;
+	t_list	**aux;
+	t_list	**auxn;
 	int	len;
 
 	len = ft_lstsize((*a));
 	if (len >= 1)
-		return (0);
-	ref = (*a);
+		return (1);
 	while(a)
 	{
-		aux = (*a);
-		aux = aux->next;
+		aux = a;
+		aux = &(*aux)->next;
 		auxn = aux;
-		auxn = auxn->next;
-		if ((*a)->content > aux->content || aux->content > auxn->content)
-		{
-			a = ref;
+		auxn = &(*auxn)->next;
+		if ((*a)->content > (*aux)->content || (*aux)->content > (*auxn)->content)
 			return (0);
-		}
-		(*a) = (*a)->next;
+		(a) = &(*a)->next;
 	}
-	a = ref;
 	return (1);
 }
 
-
-t_list	**ft_sort_two(t_list	**a)
+void	**ft_sort_two(t_list	**a)
 {
-	if (ft_sorted(a))
-		return (a);
-	else
-	{
-		ft_sa(a);
-		return (a);
-	}
+	if (!ft_sorted(a))
+		ft_sa(*a);
 }
 
-t_list	**ft_sort_three(t_list	**a)
+void	**ft_sort_three(t_list	**a)
 {
-	t_list	*aux;
-	t_list	*auxn;
-	
-	aux = (*a);
-	if (ft_sorted(a))
-		return (a);
+	if ((*a)->content < (*a)->next->content)
+	{
+		if ((*a)->next->content > (*a)->next->next->content)//2 > 3 > 1
+		{
+			ft_rra(*a);
+			if (!ft_sorted)//1 > 3 > 2
+				ft_sa(*a);
+		}
+	}
 	else
 	{
-		aux = aux->next;
-		auxn = aux;
-		auxn = auxn->next;
-		if 
+		if ((*a)->next->content > (*a)->next->next->content)//3 > 2 > 1
+		{
+			ft_ra(*a);
+			ft_ra(*a);
+		}
+		else if ((*a)->next->content < (*a)->next->next->content)//3 > 1 > 2
+			ft_ra(*a);
+		else//2 > 1 > 3
+			ft_sa(*a);
 	}
 }
