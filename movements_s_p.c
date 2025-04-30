@@ -18,7 +18,7 @@ void	ft_sa(t_list **a)
 	t_list	*aux;
 
 	aux = (*a);
-	len = ft_lstsize((*a));
+	len = ft_lstsize(*a);
 	if (len < 2)
 		return ;
 	(*a) = (*a)->next;
@@ -32,7 +32,7 @@ void	ft_sb(t_list **b)
 	t_list	*aux;
 
 	aux = (*b);
-	len = ft_lstsize((*b));
+	len = ft_lstsize(*b);
 	if (len < 2)
 		return ;
 	(*b) = (*b)->next;
@@ -45,12 +45,12 @@ void	ft_ss(t_list	**a, t_list	**b)
 	int	len1;
 	int	len2;
 
-	len1 = ft_lstsize((*a));
-	len2 = ft_lstsize((*b));
+	len1 = ft_lstsize(*a);
+	len2 = ft_lstsize(*b);
 	if (len1 >= 2 && len2 >= 2)
 	{
-		ft_swap_a(a);
-		ft_swap_b(b);
+		ft_sa(a);
+		ft_sb(b);
 	}
 	else
 		return ;

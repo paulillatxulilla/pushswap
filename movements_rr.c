@@ -20,7 +20,7 @@ void	ft_rra(t_list	**a)
 	int		size;
 
 	aux = (*a);
-	last = ft_lstlast(a);
+	last = ft_lstlast(*a);
 	size = (ft_lstsize(*a));
 	aux2 = ft_lstmoven(aux, size - 1);
 	if (!a)
@@ -37,8 +37,8 @@ void	ft_rrb(t_list	**b)
 	int		size;
 
 	aux = (*b);
-	last = ft_lstlast(b);
-	size = (ft_lstsize(*b));
+	last = ft_lstlast(*b);
+	size = ft_lstsize(*b);
 	aux2 = ft_lstmoven(aux, size - 1);
 	if (!b)
 		return ;
@@ -48,6 +48,6 @@ void	ft_rrb(t_list	**b)
 
 void	ft_rrr(t_list	**a, t_list	**b)
 {
-	ft_rev_rotate_a(a);
-	ft_rev_rotate_b(b);
+	ft_rra(a);
+	ft_rrb(b);
 }

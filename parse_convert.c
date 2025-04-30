@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/28 12:31:41 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/04/30 17:08:01 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ t_list	**ft_parse_convert(char **result, t_list **a)
 		if (ft_check_repeat(a) && ft_check_long(a))
 			return (a);
 	}
-	else
-	{
-		ft_printf("Error\n");
-		return (NULL);
-	}
+	ft_printf("Error\n");
+	return (NULL);
 }
 
 int	ft_check_digit(char **result)
@@ -36,7 +33,7 @@ int	ft_check_digit(char **result)
 	while (result[i])
 	{
 		j = 0;
-		if (result[i][j] == "-" || result [i][j] == "+")
+		if (result[i][j] == '-' || result [i][j] == '+')
 			j++;
 		if (!result[i][j])
 			return (0);
@@ -58,7 +55,7 @@ t_list	**ft_atot(char **result, t_list **a)
 	i = 0;
 	while (result[i])
 	{
-		ft_lstadd_back(&a, ft_lstnew(ft_atoi(result[i])));
+		ft_lstadd_back(a, ft_lstnew(ft_atoi(result[i])));
 		i++;
 	}
 	return (a);
@@ -70,7 +67,7 @@ int	ft_check_long(t_list **a)
 	aux = (*a);
 	while (aux)
 	{
-		if (aux->content == -2147483648 || aux->content == 2147483647)
+		if (aux->content <= -2147483648 || aux->content >= 2147483647)
 			return (0);
 		aux = aux->next;
 	}
@@ -82,17 +79,18 @@ int	ft_check_repeat(t_list **a)
 	t_list	**aux;
 	t_list	**aux2;
 
+	aux2 = NULL;
 	aux = a;
 	while (aux)
 	{
-		aux2 = (*aux)->next;
+		(*aux2) = (*aux)->next;
 		while (aux2)
 		{
 			if ((*aux)->content == (*aux2)->content)
 				return (0);
-			aux2 = (*aux2)->next;
+			(*aux2) = (*aux2)->next;
 		}
-		aux = (*aux)->next;
+		(*aux) = (*aux)->next;
 	}
 	return (1);
 }

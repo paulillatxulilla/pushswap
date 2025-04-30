@@ -40,6 +40,6 @@ void	ft_rb(t_list	**b)
 
 void	ft_rr(t_list	**a, t_list	**b)
 {
-	ft_rotate_a(a);
-	ft_rotate_b(b);
+	ft_ra(a);
+	ft_rb(b);
 }

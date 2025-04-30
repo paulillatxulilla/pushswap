@@ -11,20 +11,21 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/* 
-int	main (int argc, char *argv)
+
+int	main (int argc, char **argv)
 {
 	t_list	**a;
 	t_list	**b;
 	char	**result;
 
-	
+	a = NULL;
+	b = NULL;
+
 	if (argc < 2)
 	{
 		ft_printf ("Error\n");
 		return (0);
 	}
-	result = ft_split(argv, " ");
-	a = ft_parse_convert(result, a);
+	a = ft_parse_convert(argv, a);
 	return (0);
-} */
+}
