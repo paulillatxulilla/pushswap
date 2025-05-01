@@ -14,10 +14,9 @@
 
 int	main (int argc, char **argv)
 {
-	t_list	**a;
-	t_list	**b;
-	char	**result;
-
+	t_list	*a;
+	t_list	*b;
+	//char	**result;
 	a = NULL;
 	b = NULL;
 
@@ -26,6 +25,8 @@ int	main (int argc, char **argv)
 		ft_printf ("Error\n");
 		return (0);
 	}
-	a = ft_parse_convert(argv, a);
+	ft_parse_convert(argv, &a);
+	ft_sort(&a);
+	//ft_tprint(&a);
 	return (0);
 }

@@ -6,22 +6,26 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/04/30 17:08:01 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/01 15:17:00 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	**ft_parse_convert(char **result, t_list **a)
+void	ft_parse_convert(char **result, t_list **a)
 {
 	if (ft_check_digit(result))
-	{
+	{	
 		ft_atot(result, a);
-		if (ft_check_repeat(a) && ft_check_long(a))
-			return (a);
+		//ft_printf("convierte\n");
+		if (!ft_check_repeat(a)/* || !ft_check_long(a) */)
+		{
+			ft_printf("Error\n");
+			return ;	
+		}
 	}
-	ft_printf("Error\n");
-	return (NULL);
+	else
+		ft_printf("Error\n");
 }
 
 int	ft_check_digit(char **result)
@@ -29,14 +33,16 @@ int	ft_check_digit(char **result)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	while (result[i])
 	{
 		j = 0;
 		if (result[i][j] == '-' || result [i][j] == '+')
+		{
 			j++;
-		if (!result[i][j])
-			return (0);
+			if (!result[i][j])
+				return (0);
+		}
 		while (result[i][j])
 		{
 			if (!ft_isdigit(result[i][j]))
@@ -48,49 +54,38 @@ int	ft_check_digit(char **result)
 	return (1);
 }
 
-t_list	**ft_atot(char **result, t_list **a)
+void	ft_atot(char **result, t_list **a)
 {
 	int	i;
+	int	aux;
+	t_list	*temp;
 
-	i = 0;
+	i = 1;
 	while (result[i])
 	{
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(result[i])));
+		aux = ft_atoi(result[i]);
+		temp = ft_lstnew(aux);
+		ft_lstadd_back(a, temp);
 		i++;
 	}
-	return (a);
-}
-int	ft_check_long(t_list **a)
-{
-	t_list	*aux;
-	
-	aux = (*a);
-	while (aux)
-	{
-		if (aux->content <= -2147483648 || aux->content >= 2147483647)
-			return (0);
-		aux = aux->next;
-	}
-	return (1);
 }
 
 int	ft_check_repeat(t_list **a)
 {
-	t_list	**aux;
-	t_list	**aux2;
+	t_list	*aux;
+	t_list	*aux2;
 
-	aux2 = NULL;
-	aux = a;
+	aux = (*a);
 	while (aux)
 	{
-		(*aux2) = (*aux)->next;
+		aux2 = aux->next;
 		while (aux2)
 		{
-			if ((*aux)->content == (*aux2)->content)
+			if (aux->content == aux2->content)
 				return (0);
-			(*aux2) = (*aux2)->next;
+			aux2 = aux2->next;
 		}
-		(*aux) = (*aux)->next;
+		aux = aux->next;
 	}
 	return (1);
 }

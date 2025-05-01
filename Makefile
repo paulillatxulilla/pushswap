@@ -6,37 +6,39 @@
 #    By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 17:04:33 by padan-pe          #+#    #+#              #
-#    Updated: 2025/04/30 17:41:09 by padan-pe         ###   ########.fr        #
+#    Updated: 2025/05/01 15:42:28 by padan-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = push_swap.a
+NAME = push_swap
 CC = cc 
-C_FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 INCLUDE = -I. #directorio de cabeceras (dir actual)
-SRC_FILES = ksort.c movements_r.c movements_rr.c movements_s_p.c parse_convert.c push_swap.c sort_two_three.c
-OBJ_FILES = $(SRC_FILES:%.c=%.o)
+SRC_FILES = ksort.c movements_r.c movements_rr.c movements_s_p.c parse_convert.c push_swap.c sort_two_three.c main.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
 
 LIBFT = libft++
 LIBFT_LIB = libft++/libft.a
 
+# %.o: %.c #regla para compilar archivos .c en .o
+# 	$(CC) $(C_FLAGS) $(INCLUDE) -c $< -o $@
+	
 all: $(NAME)
 
 $(NAME): $(LIBFT_LIB) $(OBJ_FILES) # para evitar relink, solo hace cambios en la lib si algun archivo .o ha cambiado
-	ar rcs $(NAME) $(OBJ_FILES) $(LIBFT_LIB)
+		$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT_LIB) -o $(NAME)
 	
 $(LIBFT_LIB):
 	@make -C $(LIBFT)
 	
-%.o: %.c #regla para compilar archivos .c en .o
-	$(CC) $(C_FLAGS) $(INCLUDE) -c $< -o $@
 
 clean: #regla para limpiar archivos .o
 	rm -f $(OBJ_FILES)
 	@make clean -C $(LIBFT)
 fclean: #regla para limpiar todo incluyendo la lib
-	rm -f $(NAME) $(OBJ_FILES) $(LIBFT_LIB)
+	rm -f $(NAME) $(OBJ_FILES)
+	@make fclean -C $(LIBFT)
 
 re: fclean all #recompilar desde 0
 
