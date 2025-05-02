@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/01 15:45:44 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/02 16:00:50 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_sort(t_list	**a)
 		if (len == 3)
 			ft_sort_three(a);
 	}
-	ft_tprint(a);
+	else
+		ft_printf("ordenado\n");
 }
 int	ft_sorted(t_list	**a)
 {
@@ -42,6 +43,8 @@ int	ft_sorted(t_list	**a)
 		aux = aux->next;
 		auxn = aux;
 		auxn = auxn->next;
+		if (!aux || !auxn)
+			return (1);
 		if ((*a)->content > aux->content || aux->content > auxn->content)
 			return (0);
 		(a) = &(*a)->next;
@@ -55,12 +58,7 @@ void	ft_sort_three(t_list	**a)
 	{
 		if ((*a)->next->content > (*a)->next->next->content)//2 > 3 > 1
 		{
-			ft_printf("ANTes ra\n");
-			ft_tprint(a);
 			ft_rra(a);
-			ft_printf("dps ra\n");
-			ft_tprint(a);
-			exit(1);
 			if (!ft_sorted(a))//1 > 3 > 2
 				ft_sa(a);
 		}
@@ -70,10 +68,12 @@ void	ft_sort_three(t_list	**a)
 		if ((*a)->next->content > (*a)->next->next->content)//3 > 2 > 1
 		{
 			ft_ra(a);
+			ft_sa(a);
+		}
+		else if ((*a)->content > (*a)->next->next->content)//3 > 1 > 2
+		{
 			ft_ra(a);
 		}
-		else if ((*a)->next->content < (*a)->next->next->content)//3 > 1 > 2
-			ft_ra(a);
 		else//2 > 1 > 3
 			ft_sa(a);
 	}

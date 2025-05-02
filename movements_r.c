@@ -18,11 +18,14 @@ void	ft_ra(t_list	**a)
 	t_list	*last;
 
 	aux = *a;
+
 	last = ft_lstlast((*a));
 	if (!a)
 		return ;
-	last->next = aux->next;
+	(*a) = (*a)->next;
+	last->next = aux;
 	aux->next = NULL;
+	ft_printf("ra\n");
 }
 
 void	ft_rb(t_list	**b)
@@ -34,12 +37,15 @@ void	ft_rb(t_list	**b)
 	last = ft_lstlast((*b));
 	if (!b)
 		return ;
+	(*b) = (*b)->next;
 	last->next = aux->next;
 	aux->next = NULL;
+	ft_printf("rb\n");
 }
 
 void	ft_rr(t_list	**a, t_list	**b)
 {
 	ft_ra(a);
 	ft_rb(b);
+	ft_printf("rr\n");
 }

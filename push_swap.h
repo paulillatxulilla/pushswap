@@ -42,5 +42,6 @@ void	ft_sort(t_list	**a);
 int	    ft_sorted(t_list	**a);
 void	ft_sort_three(t_list	**a);
 void	ft_tprint(t_list	**a);
+int     ft_find_pivot(t_list	**a);
 
 #endif
