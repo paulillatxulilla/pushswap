@@ -29,6 +29,7 @@ int	main (int argc, char **argv)
 	// ft_sort(&a);
 	// ft_printf("números ordenados:\n");
 	// ft_tprint(&a);
-	ft_find_pivot(&a);
+	//ft_find_pivot(&a);
+	ft_find_smallest_node(&a);
 	return (0);
 }

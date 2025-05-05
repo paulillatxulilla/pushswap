@@ -6,12 +6,12 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:41:53 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/02 16:25:31 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:56:11 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/* 
 int	ft_find_pivot(t_list	**a)
 {
 	int len;
@@ -30,7 +30,15 @@ int	ft_find_pivot(t_list	**a)
 	result = (*a)->next->content;
 	return (result);
 }
-/* void	ft_ksort(t_list	**a, t_list	**b, int pivot)
+void	ft_ksort(t_list	**a, t_list	**b, int pivot)
 {
-	
-} */
+	t_list	*aux;
+
+	while (a)
+	{
+		if ((*a)->content < pivot)
+			ft_pb(a, b);
+		*a = &(*a)->next;
+	}
+}
+ */

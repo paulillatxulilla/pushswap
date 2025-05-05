@@ -24,7 +24,6 @@ void	ft_sa(t_list **a)
 	(*a) = (*a)->next;
 	aux->next = (*a)->next;
 	(*a)->next = aux;
-	ft_printf("sa\n");
 }
 
 void	ft_sb(t_list **b)
@@ -39,7 +38,6 @@ void	ft_sb(t_list **b)
 	(*b) = (*b)->next;
 	aux->next = (*b)->next;
 	(*b)->next = aux;
-	ft_printf("sb\n");
 }
 
 void	ft_ss(t_list	**a, t_list	**b)
@@ -53,7 +51,6 @@ void	ft_ss(t_list	**a, t_list	**b)
 	{
 		ft_sa(a);
 		ft_sb(b);
-		ft_printf("ss\n");
 	}
 	else
 		return ;
@@ -70,7 +67,6 @@ void	ft_pa(t_list	**a, t_list	**b)
 	ft_lstadd_front(a, aux);
 	aux = aux->next;
 	(*b) = (*b)->next;
-	ft_printf("pa\n");
 }
 
 void	ft_pb(t_list	**a, t_list	**b)
@@ -82,6 +78,6 @@ void	ft_pb(t_list	**a, t_list	**b)
 		return ;
 	aux->next = NULL;
 	ft_lstadd_front(b, aux);
+	aux = aux->next;
 	(*a) = (*a)->next;
-	ft_printf("pb\n");
 }
