@@ -27,9 +27,8 @@ int	main (int argc, char **argv)
 	}
 	ft_parse_convert(argv, &a);
 	// ft_sort(&a);
-	// ft_printf("números ordenados:\n");
-	// ft_tprint(&a);
 	//ft_find_pivot(&a);
-	ft_find_smallest_node(&a);
+	ft_setindex(&a);
+	ft_find_pivot(&a);
 	return (0);
 }

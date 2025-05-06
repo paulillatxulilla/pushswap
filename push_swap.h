@@ -42,7 +42,9 @@ void	ft_sort(t_list	**a);
 int	    ft_sorted(t_list	**a);
 void	ft_sort_three(t_list	**a);
 void	ft_tprint(t_list	**a);
-//int     ft_find_pivot(t_list	**a);
-int	ft_find_smallest_node(t_list	**a);
+int     ft_find_pivot(t_list	**a);
+int 	ft_find_small_int(t_list	**a);
+void	ft_setindex(t_list	**a);
+t_list	*ft_lstmovie(t_list *lst, int ind);
 
 #endif

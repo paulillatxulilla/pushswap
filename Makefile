@@ -6,7 +6,7 @@
 #    By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 17:04:33 by padan-pe          #+#    #+#              #
-#    Updated: 2025/05/01 15:42:28 by padan-pe         ###   ########.fr        #
+#    Updated: 2025/05/06 17:54:21 by padan-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 CC = cc 
 CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 INCLUDE = -I. #directorio de cabeceras (dir actual)
-SRC_FILES = ksort.c movements_r.c movements_rr.c movements_s_p.c parse_convert.c push_swap.c sort_two_three.c main.c
+SRC_FILES = ksort.c movements_r.c movements_rr.c movements_s_p.c parse_convert.c push_swap.c sort_two_three.c index.c main.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 LIBFT = libft++

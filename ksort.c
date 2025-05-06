@@ -6,33 +6,26 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:41:53 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/05 17:56:11 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:30:33 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/* 
-int	ft_find_pivot(t_list	**a)
-{
-	int len;
-	int	result;
-	t_list	*mid;
-	t_list	*last;
-
-	mid = NULL;
-	last = NULL;
-	len = ft_lstsize(*a);
-	mid = ft_lstmoven(*a, len / 2);
-	last = ft_lstlast(*a);
-	(*a)->next = mid;
-	mid->next = last;
-	ft_sort_three (a);
-	result = (*a)->next->content;
-	return (result);
-}
-void	ft_ksort(t_list	**a, t_list	**b, int pivot)
+int	ft_find_pivot (t_list **a)
 {
 	t_list	*aux;
+	int	len;
+
+	len = ft_lstsize(*a);
+	aux = ft_lstmovie((*a), (len / 2) + 1);
+	return (aux->content);
+}
+/* void	ft_ksort(t_list	**a, t_list	**b)
+{
+	t_list	*aux;
+	int		pivot;
+
+	pivot = 
 
 	while (a)
 	{
@@ -40,5 +33,5 @@ void	ft_ksort(t_list	**a, t_list	**b, int pivot)
 			ft_pb(a, b);
 		*a = &(*a)->next;
 	}
-}
- */
+} */
+ 

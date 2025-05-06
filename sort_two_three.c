@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/02 16:00:50 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:23:33 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,7 @@ void	ft_sort_three(t_list	**a)
 			ft_sa(a);
 		}
 		else if ((*a)->content > (*a)->next->next->content)//3 > 1 > 2
-		{
 			ft_ra(a);
-		}
 		else//2 > 1 > 3
 			ft_sa(a);
 	}
