@@ -21,11 +21,10 @@
 # include <unistd.h>
 # include <stdbool.h>
 
-void    ft_parse_convert(char **result, t_list **a);
+void	ft_parse_convert(char **result, t_list **a);
 int		ft_check_digit(char **result);
 int		ft_check_repeat(t_list **a);
-//int	    ft_check_long(t_list **a);
-void    ft_atot(char **result, t_list **a);
+void	ft_atot(char **result, t_list **a);
 void	ft_sa(t_list **a);
 void	ft_sb(t_list **b);
 void	ft_ss(t_list	**a, t_list	**b);
@@ -39,12 +38,15 @@ void	ft_rrb(t_list	**b);
 void	ft_rrr(t_list	**a, t_list	**b);
 t_list	*ft_lstmoven(t_list *lst, int n);
 void	ft_sort(t_list	**a);
-int	    ft_sorted(t_list	**a);
+int		ft_sorted(t_list	**a);
 void	ft_sort_three(t_list	**a);
 void	ft_tprint(t_list	**a);
-int     ft_find_pivot(t_list	**a);
-int 	ft_find_small_int(t_list	**a);
+//int		ft_find_pivot(t_list	**a);
+int		ft_find_small_int(t_list	**a);
 void	ft_setindex(t_list	**a);
 t_list	*ft_lstmovie(t_list *lst, int ind);
+void	ft_set_position(t_list	**a);
+void	ft_index_and_position (t_list	**a);
+void	ft_ksort(t_list	**a, t_list	**b);
 
 #endif
