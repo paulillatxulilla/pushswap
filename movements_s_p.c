@@ -66,10 +66,10 @@ void	ft_pa(t_list	**a, t_list	**b)
 	aux = (*b);
 	if (!b)
 		return ;
+	(*b) = (*b)->next;
 	aux->next = NULL;
 	ft_lstadd_front(a, aux);
 	aux = aux->next;
-	(*b) = (*b)->next;
 	ft_printf("pa");
 }
 
@@ -80,9 +80,9 @@ void	ft_pb(t_list	**a, t_list	**b)
 	aux = (*a);
 	if (!a)
 		return ;
+	(*a) = (*a)->next;
 	aux->next = NULL;
 	ft_lstadd_front(b, aux);
 	aux = aux->next;
-	(*a) = (*a)->next;
 	ft_printf("pb");
 }

@@ -30,6 +30,6 @@ int	main (int argc, char **argv)
 	//ft_find_pivot(&a);
 	ft_index_and_position(&a);
 	ft_ksort(&a, &b);
-	ft_tprint(&b);
+	ft_tprint(&a);
 	return (0);
 }
