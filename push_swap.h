@@ -47,6 +47,8 @@ void	ft_setindex(t_list	**a);
 t_list	*ft_lstmovie(t_list *lst, int ind);
 void	ft_set_position(t_list	**a);
 void	ft_index_and_position (t_list	**a);
-void	ft_ksort(t_list	**a, t_list	**b);
-
+int	    ft_root(int	n);
+void	ft_ksort_1(t_list **a, t_list **b);
+void	ft_ksort_2(t_list	**a, t_list	**b);
+t_list	*ft_find_bigg_int(t_list	**b);
 #endif

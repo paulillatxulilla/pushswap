@@ -26,8 +26,8 @@ int	main (int argc, char **argv)
 		return (0);
 	}
 	ft_parse_convert(argv, &a);
-	// ft_sort(&a);
-	//ft_find_pivot(&a);
+	ft_sort(&a);
+	ft_find_pivot(&a);
 	ft_index_and_position(&a);
 	ft_ksort(&a, &b);
 	ft_tprint(&a);

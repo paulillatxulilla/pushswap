@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:26:11 by paula             #+#    #+#             */
-/*   Updated: 2025/05/09 15:58:07 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/12 16:34:08 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,13 @@ void	ft_tprint(t_list	**a)
 	}
 }
 
+int	ft_root(int	n)
+{
+	int	result;
 
+	result = 1;
+	while (result * result < n)
+		result++;
+	ft_printf("%d", result);
+	return (result);
+}
