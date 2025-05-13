@@ -6,13 +6,13 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/06 16:23:33 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/13 18:47:45 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort(t_list	**a)
+void	ft_sort(t_list	**a, t_list	**b)
 {
 	int	len;
 
@@ -23,9 +23,11 @@ void	ft_sort(t_list	**a)
 			ft_sa(a);
 		if (len == 3)
 			ft_sort_three(a);
+		if (len > 3)
+			ft_ksort(a, b);
 	}
 	else
-		ft_printf("ordenado\n");
+		exit(1);	
 }
 int	ft_sorted(t_list	**a)
 {

@@ -37,7 +37,7 @@ void	ft_rb(t_list	**b)
 	if (!b)
 		return ;
 	(*b) = (*b)->next;
-	last->next = aux->next;
+	last->next = aux;
 	aux->next = NULL;
 	ft_printf("rb\n");
 }

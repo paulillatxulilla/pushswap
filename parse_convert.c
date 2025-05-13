@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:44:16 by paula             #+#    #+#             */
-/*   Updated: 2025/05/01 15:17:00 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/13 19:36:46 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void	ft_parse_convert(char **result, t_list **a)
 	if (ft_check_digit(result))
 	{	
 		ft_atot(result, a);
-		//ft_printf("convierte\n");
-		if (!ft_check_repeat(a)/* || !ft_check_long(a) */)
+		if (!ft_check_repeat(a))
 		{
 			ft_printf("Error\n");
 			return ;	

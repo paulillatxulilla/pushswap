@@ -16,20 +16,17 @@ int	main (int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
-	//char	**result;
+
 	a = NULL;
 	b = NULL;
-
-	if (argc < 2)
+	(void)argc;
+	/* if (argc < 2)
 	{
 		ft_printf ("Error\n");
 		return (0);
-	}
-	ft_parse_convert(argv, &a);
-	ft_sort(&a);
-	ft_find_pivot(&a);
+	}	 */
+ 	ft_parse_convert(argv, &a);
 	ft_index_and_position(&a);
-	ft_ksort(&a, &b);
-	ft_tprint(&a);
+	ft_sort(&a, &b);
 	return (0);
 }

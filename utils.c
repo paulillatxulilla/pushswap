@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:26:11 by paula             #+#    #+#             */
-/*   Updated: 2025/05/12 16:34:08 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:11:42 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ int	ft_root(int	n)
 	result = 1;
 	while (result * result < n)
 		result++;
-	ft_printf("%d", result);
 	return (result);
 }

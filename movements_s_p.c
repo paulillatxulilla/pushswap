@@ -77,12 +77,12 @@ void	ft_pb(t_list	**a, t_list	**b)
 {
 	t_list	*aux;
 
-	aux = (*a);
 	if (!a)
 		return ;
+	aux = (*a);
 	(*a) = (*a)->next;
 	aux->next = NULL;
 	ft_lstadd_front(b, aux);
-	aux = aux->next;
+	aux = NULL;
 	ft_printf("pb\n");
 }
