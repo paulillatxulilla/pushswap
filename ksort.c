@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:41:53 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/13 19:43:33 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:23:44 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_ksort_1(t_list **a, t_list **b, int lena)
 			ft_ra(a);
 		lenb = ft_lstsize((*b));
 	}
-	ft_tprint(b);
 }
 
 t_list	*ft_find_bigg_int(t_list	**b)
@@ -104,5 +103,4 @@ void	ft_ksort_2(t_list	**a, t_list	**b)
 		}
 		ft_set_position(b);
 	}
-	ft_tprint(a);
 }

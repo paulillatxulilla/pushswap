@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/13 18:47:45 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:37:46 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,5 @@ void	ft_sort_three(t_list	**a)
 			ft_sa(a);
 	}
 }
+
+//ft_srotfour_to_seven

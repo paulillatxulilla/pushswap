@@ -15,18 +15,18 @@
 void	ft_rra(t_list	**a)
 {
 	t_list	*aux;
-	t_list	*aux2;
+	t_list	*auxa;
 	t_list	*last;
 	int		size;
 
-	aux = (*a);
+	auxa = (*a);
 	last = ft_lstlast(*a);
 	size = ft_lstsize(*a);
-	aux2 = ft_lstmoven((*a), size - 1);
+	aux = ft_lstmoven(*a, size - 1);
 	if (!a)
 		return ;
-	last->next = aux;
-	aux2->next = NULL;
+	last->next = auxa;
+	aux->next = NULL;
 	(*a) = last;
 	ft_printf("rra\n");
 }
@@ -34,18 +34,18 @@ void	ft_rra(t_list	**a)
 void	ft_rrb(t_list	**b)
 {
 	t_list	*aux;
-	t_list	*aux2;
+	t_list	*auxb;
 	t_list	*last;
 	int		size;
 
-	aux = (*b);
+	auxb = (*b);
 	last = ft_lstlast(*b);
 	size = ft_lstsize(*b);
-	aux2 = ft_lstmoven(aux, size - 1);
+	aux = ft_lstmoven(*b, size - 1);
 	if (!b)
 		return ;
-	last->next = aux->next;
-	aux2->next = NULL;
+	last->next = auxb;
+	aux->next = NULL;
 	(*b) = last;
 	ft_printf("rrb\n");
 }
