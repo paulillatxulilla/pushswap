@@ -6,13 +6,13 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:53:33 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/13 18:35:00 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:34:20 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_index_and_position (t_list	**a)
+void	ft_index_and_position(t_list	**a)
 {
 	ft_setindex(a);		
 	ft_set_position(a);
