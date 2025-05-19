@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:53:33 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/15 16:34:20 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:58:55 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	ft_index_and_position(t_list	**a)
 {
-	ft_setindex(a);		
+	ft_setindex(a);
 	ft_set_position(a);
 }
 
 void	ft_setindex(t_list	**a)
 {
 	t_list	*aux;
-	int	ref;
-	int	len;
-	int i;
-	
+	int		ref;
+	int		len;
+	int		i;
+
 	len = ft_lstsize((*a));
 	i = 1;
 	aux = (*a);
 	while (aux && i <= len)
-	{	
+	{
 		ref = ft_find_small_int(a);
 		if (aux->content == ref)
 		{
@@ -46,7 +46,7 @@ int	ft_find_small_int(t_list	**a)
 {
 	t_list	*temp;
 	int		reference;
-	
+
 	temp = *a;
 	reference = __INT_MAX__;
 	while (temp)
@@ -65,8 +65,8 @@ void	ft_set_position(t_list	**a)
 
 	i = 1;
 	aux = (*a);
-	while(aux)
-	{		
+	while (aux)
+	{
 		aux->position = i;
 		i++;
 		aux = aux->next;

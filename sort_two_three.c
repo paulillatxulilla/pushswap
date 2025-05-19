@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/15 17:44:07 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/19 19:03:54 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,18 @@ void	ft_sort(t_list	**a, t_list	**b)
 int	ft_sorted(t_list	**a)
 {
 	t_list	*aux;
-	t_list	*auxn;
-	
-	int	len;
+	int		len;
 
 	len = ft_lstsize(*a);
 	if (len == 1)
 		return (1);
-	while(a)
+	while (a)
 	{
 		aux = (*a);
 		aux = aux->next;
-		auxn = aux;
-		auxn = auxn->next;
-		if (!aux || !auxn)
+		if (!aux)
 			return (1);
-		if ((*a)->content > aux->content || aux->content > auxn->content)
+		if ((*a)->content > aux->content)
 			return (0);
 		(a) = &(*a)->next;
 	}
@@ -61,24 +57,23 @@ void	ft_sort_three(t_list	**a)
 {
 	if ((*a)->content < (*a)->next->content)
 	{
-		if ((*a)->next->content > (*a)->next->next->content)//2 > 3 > 1
+		if ((*a)->next->content > (*a)->next->next->content)
 		{
 			ft_rra(a);
-			
-			if (!ft_sorted(a))//1 > 3 > 2
+			if (!ft_sorted(a))
 				ft_sa(a);
 		}
 	}
 	else
 	{
-		if ((*a)->next->content > (*a)->next->next->content)//3 > 2 > 1
+		if ((*a)->next->content > (*a)->next->next->content)
 		{
 			ft_ra(a);
 			ft_sa(a);
 		}
-		else if ((*a)->content > (*a)->next->next->content)//3 > 1 > 2
+		else if ((*a)->content > (*a)->next->next->content)
 			ft_ra(a);
-		else//2 > 1 > 3
+		else
 			ft_sa(a);
 	}
 }

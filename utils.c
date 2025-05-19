@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:26:11 by paula             #+#    #+#             */
-/*   Updated: 2025/05/14 18:20:46 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:59:51 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list	*ft_lstmoven(t_list *lst, int n)
 t_list	*ft_lstmovie(t_list *lst, int ind)
 {
 	int	i;
-	
+
 	i = 1;
 	if (!lst)
 		return (NULL);
@@ -53,14 +53,26 @@ void	ft_tprint(t_list	**a)
 	}
 }
 
-int	ft_root(int	n)
+int	ft_root(int n)
 {
 	int	result;
 
 	result = 1;
 	while (result * result <= n)
 		result++;
-	if (result != n)
+	if (result * result != n)
 		result--;
 	return (result);
+}
+
+void	ft_lstfree(t_list **lst)
+{
+	t_list	*temp;
+
+	while (*lst)
+	{
+		temp = *lst;
+		(*lst) = (*lst)->next;
+		free(temp);
+	}
 }

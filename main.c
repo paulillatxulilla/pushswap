@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
@@ -20,15 +20,13 @@ int	main (int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
+	result = NULL;
 	if (argc < 2 || argv[1][0] == 0)
 		return (0);
-	if (argv[1][1] == 1)
-		result = ft_split(*argv, ' ');
-	else
-		result = argv;
- 	ft_parse_convert(result, &a);
+	ft_parse_convert(argv, &a);
 	ft_index_and_position(&a);
 	ft_sort(&a, &b);
-	ft_tprint(&a);
+	ft_lstfree(&a);
+	ft_lstfree(&b);
 	return (0);
 }

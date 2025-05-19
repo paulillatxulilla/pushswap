@@ -6,14 +6,14 @@
 #    By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 17:04:33 by padan-pe          #+#    #+#              #
-#    Updated: 2025/05/13 18:58:40 by padan-pe         ###   ########.fr        #
+#    Updated: 2025/05/19 16:03:51 by padan-pe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = push_swap
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 INCLUDE = -I. #directorio de cabeceras (dir actual)
 SRC_FILES = ksort.c movements_r.c movements_rr.c movements_s_p.c parse_convert.c utils.c sort_two_three.c index_position.c main.c
 OBJ_FILES = $(SRC_FILES:.c=.o)

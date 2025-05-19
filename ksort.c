@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:41:53 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/15 17:34:56 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/19 19:02:22 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_push_smallest(t_list	**a, t_list	**b, int i)
 
 	aux = ft_lstmovie((*a), i);
 	len = ft_lstsize(*a);
-	ft_printf("\n");
 	while (aux->position != 1)
 	{
 		if (aux->position > ((len / 2) + 1))
@@ -31,6 +30,7 @@ void	ft_push_smallest(t_list	**a, t_list	**b, int i)
 	}
 	ft_pb(a, b);
 }
+
 void	ft_ksort(t_list	**a, t_list	**b)
 {
 	int	lena;
@@ -40,10 +40,12 @@ void	ft_ksort(t_list	**a, t_list	**b)
 	ft_ksort_1(a, b, lena);
 	ft_ksort_2(a, b);
 }
+
 void	ft_ksort_1(t_list **a, t_list **b, int lena)
 {
 	int	lenb;
 	int	k;
+
 	lenb = ft_lstsize((*b));
 	k = (ft_root(lena) * 1.4);
 	while (*a)
@@ -66,7 +68,7 @@ t_list	*ft_find_bigg_int(t_list	**b)
 	t_list	*aux;
 	t_list	*reference;
 	int		min;
-	
+
 	aux = *b;
 	reference = NULL;
 	min = (__INT_MAX__ * -1) - 1;
@@ -86,7 +88,7 @@ void	ft_ksort_2(t_list	**a, t_list	**b)
 {
 	t_list	*big;
 	t_list	*aux;
-	int	len;
+	int		len;
 
 	while (*b)
 	{
