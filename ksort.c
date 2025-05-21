@@ -6,13 +6,13 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:41:53 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/19 19:02:22 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:33:56 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_smallest(t_list	**a, t_list	**b, int i)
+void	ft_pushi(t_list	**a, t_list	**b, int i)
 {
 	t_list	*aux;
 	int		len;
@@ -36,7 +36,7 @@ void	ft_ksort(t_list	**a, t_list	**b)
 	int	lena;
 
 	lena = ft_lstsize(*a);
-	ft_push_smallest(a, b, 1);
+	ft_pushi(a, b, 1);
 	ft_ksort_1(a, b, lena);
 	ft_ksort_2(a, b);
 }

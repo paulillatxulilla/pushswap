@@ -6,7 +6,7 @@
 /*   By: padan-pe <padan-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:20:08 by padan-pe          #+#    #+#             */
-/*   Updated: 2025/05/19 19:03:54 by padan-pe         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:34:26 by padan-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,14 @@ void	ft_sortf_our_ive(t_list	**a, t_list **b, int len)
 {
 	if (len == 4)
 	{
-		ft_push_smallest(a, b, 1);
+		ft_pushi(a, b, 1);
 		ft_sort_three(a);
 		ft_pa(a, b);
 	}
 	if (len == 5)
 	{
-		ft_push_smallest(a, b, 1);
-		ft_push_smallest(a, b, 2);
+		ft_pushi(a, b, 1);
+		ft_pushi(a, b, 2);
 		ft_sort_three(a);
 		ft_pa(a, b);
 		ft_pa(a, b);

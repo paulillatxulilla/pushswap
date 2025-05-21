@@ -51,7 +51,7 @@ void	ft_ksort_1(t_list **a, t_list **b, int lena);
 void	ft_ksort_2(t_list	**a, t_list	**b);
 t_list	*ft_find_bigg_int(t_list	**b);
 void	ft_ksort(t_list	**a, t_list	**b);
-void	ft_push_smallest(t_list	**a, t_list	**b, int i);
+void	ft_pushi(t_list	**a, t_list	**b, int i);
 void	ft_sortf_our_ive(t_list	**a, t_list **b, int len);
 void	ft_lstfree(t_list **lst);
 #endif
